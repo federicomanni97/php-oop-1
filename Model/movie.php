@@ -20,12 +20,23 @@ class Movie
         $this->poster_path = $postermovie;
         $this->genre = $genre;
     }
+
+    public function starsVote()
+    {
+        $vote = ceil($this->vote_average / 2);
+        $template = "<p>";
+        for ($n = 1; $n <= 5; $n++) {
+            $template .= $n <= $vote ? '<i class="fa-solid fa-star text-warning"></i>' : '<i class="fa-regular fa-star text-dark"></i>';
+        }
+        $template .= '</p>';
+        return $template;
+    }
     public function movieCards()
     {
         $poster_path = $this-> poster_path;
         $title = $this->original_title;
         $overview = $this -> overview;
-        $vote = $this -> vote_average;
+        $vote = $this -> starsVote();
         $genre = $this -> genre;
         include __DIR__ . '/../Views/card.php';
     }
