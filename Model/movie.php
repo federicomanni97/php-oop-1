@@ -18,4 +18,12 @@ class Movie
         $this->postermovie = $postermovie;
     }
 }
+
+
+$movieString = file_get_contents('/Model/movie_db.json');
+$movieList = json_decode($movieString, True);
+$movies = [];
+foreach ($movieList as $item) {
+    $movies[] = new Movie($item ['id'], $item ['title'], $item ['overview'], $item ['vote'], $item ['language'], $item ['postermovie']);
+}
 ?>
