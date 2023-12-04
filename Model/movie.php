@@ -7,5 +7,9 @@ class Movie
     private float $vote_average;
     private string $poster_path; 
     private string $original_language;
+
+    function __construct($id, $title, $overview, $vote, $language, $postermovie)
+    {
+    }
 }
 ?>
