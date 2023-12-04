@@ -1,11 +1,11 @@
 <?php
 class Movie
 {
-    public $id;
-    public $original_title;
-    public $overview;
-    public $vote_average;
-    public $poster_path; 
-    public $original_language;
+    private int $id;
+    private string $original_title;
+    private string $overview;
+    private float $vote_average;
+    private string $poster_path; 
+    private string $original_language;
 }
 ?>
