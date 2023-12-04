@@ -10,6 +10,12 @@ class Movie
 
     function __construct($id, $title, $overview, $vote, $language, $postermovie)
     {
+        $this->id = $id;
+        $this->title = $title;
+        $this->overview = $overview;
+        $this->vote = $vote;
+        $this->language = $language;
+        $this->postermovie = $postermovie;
     }
 }
 ?>
